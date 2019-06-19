@@ -25,54 +25,6 @@ All of our game methods will be coded here.
 
 ### Tic Tac Toe Game
 
-These methods represent the basic requirements and logic of the game.
-
-What it would require to print out a board three times:
-
-```ruby
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-
-puts " #{board[0]} | #{board[1]} | #{board[2]} "
-puts "-----------"
-puts " #{board[3]} | #{board[4]} | #{board[5]} "
-puts "-----------"
-puts " #{board[6]} | #{board[7]} | #{board[8]} "
-```
-
-Now, let's take a look at the same task, encapsulated into a method that we can
-simply call, or invoke, three times.
-
-```ruby
-def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-display_board(board)
-display_board(board)
-display_board(board)
-```
-
-When our logic is well encapsulated by individual methods everything about our
-code is easier. We can re-use the same logic again and again, painlessly.
-
 ### Game Conventions
 
 We'll be representing a Tic Tac Toe board using an array of `" "` strings. We'll
