@@ -1,1 +1,14 @@
+#!/usr/bin/env ruby
 
+require_relative '../lib/engine'
+require_relative '../lib/board'
+require_relative '../lib/play'
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+puts "X   WELCOME TO TIC TAC TOE!   X"
+puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+display_board(board)
+
+play(board)
