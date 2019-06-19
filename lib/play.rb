@@ -1,8 +1,8 @@
 class Play
   def play
-    puts "XXXXXXXXXXXXXXXXXXX"
-    puts "X   TIC TAC TOE   X"
-    puts "XXXXXXXXXXXXXXXXXXX"
+    puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    puts "X   WELCOME TO TIC TAC TOE!   X"
+    puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     ob = TicTacToe.new
     
     until ob.over? == true
