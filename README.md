@@ -1,10 +1,9 @@
-# Tictactoe
 # Tic Tac Toe in Ruby
 
 ## Overview
 
 Thia is a two-player CLI version of Tic Tac Toe by defining a set of methods
-to encapsulate the game logic.
+to encapsulate the game logic. This game is a result of accomplishing ruby course at learn.co
 
 ## Objectives
 
@@ -20,27 +19,15 @@ When complete, the game will look something like this when played: https://www.y
 
 This is our main executable and will be how we run our game.
 
-#### `lib/tic_tac_toe.rb`
+#### `lib/engine.rb`, `lib/board.rb` and `lib/play.rb`
 
 All of our game methods will be coded here.
 
-#### `spec`
+### Tic Tac Toe Game
 
-There are three test files that should be completed in order.
-`01_tic_tac_toe_spec.rb` sets tests for our helper methods. `02_play_spec.rb`
-tests the main `#play` method. `03_cli_spec.rb` tests the CLI.
+These methods represent the basic requirements and logic of the game.
 
-### Your Tic Tac Toe Game
-
-There are infinite ways to build Tic Tac Toe. We, however, have been building up
-to a very specific structure with the methods we've been building throughout
-this course. We'll be using many of those methods here. These methods represent
-the basic requirements and logic of the game.
-
-Why build and utilize the helper methods we've been constructing?
-
-Let's take a look at what it would require to print out a board three times,
-without any helper methods:
+What it would require to print out a board three times:
 
 ```ruby
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
@@ -86,13 +73,6 @@ display_board(board)
 When our logic is well encapsulated by individual methods everything about our
 code is easier. We can re-use the same logic again and again, painlessly.
 
-You'll approach building Tic Tac Toe in this manner, first defining helper
-methods according to the test requirements and then slowly putting them together
-to define the complete play logic.
-
-You'll then use this play method within a CLI and build a fully functioning 2
-player Tic Tac Toe CLI in Ruby!
-
 ### Game Conventions
 
 We'll be representing a Tic Tac Toe board using an array of `" "` strings. We'll
@@ -110,16 +90,9 @@ winner, we'll congratulate them. If there is a tie, we will inform our players.
 
 ## Instructions
 
-### Helper Methods
-
-Open up `lib/tic_tac_toe.rb`. You'll be coding your helper methods here. Run the
-tests for these methods by typing `rspec spec/01_tic_tac_toe_spec.rb` in the
-terminal. Use the test output, along with the guidelines below, to build these
-methods.
-
 #### `WIN_COMBINATIONS`
 
-Define a constant in `lib/tic_tac_toe.rb` `WIN_COMBINATIONS` and set it equal to
+Define a constant in `lib/board.rb` `WIN_COMBINATIONS` and set it equal to
 a nested array filled with the index values for the various win combinations in
 tic tac toe.
 
@@ -149,23 +122,6 @@ Outputting:
    |   |
 -----------
    |   |
------------
-   |   |
-```
-
-A board with an "X" in the middle:
-
-```ruby
-board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
-display_board(board)
-```
-
-Outputting:
-
-```
-   |   |
------------
-   | X |
 -----------
    |   |
 ```
@@ -218,23 +174,6 @@ composed of the following routine:
 5.  Otherwise (that is, if the move is invalid) ask for a new position until a
     valid move is received.
 
-All these procedures will be wrapped into our `#turn` method. However, the
-majority of the logic for these procedures will be defined and encapsulated in
-individual methods which you've already built.
-
-You can imagine the pseudocode for the `#turn` method:
-
-```
-ask for input
-get input
-convert input to index
-if move is valid
-  make the move for index and show board
-else
-  ask for input again until you get a valid move
-end
-```
-
 #### `#turn_count`
 
 This method takes in an argument of the board array and returns the number of
@@ -281,16 +220,4 @@ The play method is the main method of the tic tac toe application and is
 responsible for the game loop. A tic tac toe game must allow players to take
 turns, checking if the game is over after every turn, and at the conclusion of
 the game, whether because it was won or because it was a draw, reporting to the
-user the outcome of the game. You can imagine the pseudocode:
-
-```
-until the game is over
-  take turns
-end
-
-if the game was won
-  congratulate the winner
-else if the game was a draw
-  tell the players it has been a draw
-end
-```
+user the outcome of the game. 
