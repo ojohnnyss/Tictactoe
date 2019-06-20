@@ -15,11 +15,11 @@ to encapsulate the game logic. This game is a result of accomplishing ruby cours
 
 When complete, the game will look something like this when played: https://www.youtube.com/embed/e4TMZ0f6qoI
 
-#### `bin/tictactoe`
+#### `bin/tictactoe`, `bin/gameboard.rb`
 
 This is our main executable and will be how we run our game.
 
-#### `lib/engine.rb`, `lib/board.rb` and `lib/play.rb`
+#### `lib/player.rb`, `lib/gamepiece.rb` 
 
 All of our game methods will be coded here.
 
@@ -40,136 +40,3 @@ We will keep track of which player's turn it is and how many turns have been
 played. We will check to see, at every turn, if there is a winner. If there is a
 winner, we'll congratulate them. If there is a tie, we will inform our players.
 
-## Instructions
-
-#### `WIN_COMBINATIONS`
-
-Define a constant in `lib/board.rb` `WIN_COMBINATIONS` and set it equal to
-a nested array filled with the index values for the various win combinations in
-tic tac toe.
-
-```ruby
-WIN_COMBINATIONS = [
-  [0,1,2], # Top row
-  [3,4,5]  # Middle row
-  # ETC, an array for each win combination
-]
-```
-
-#### `#display_board`
-
-Define a method that prints the current board representation based on the
-`board` argument passed to the method.
-
-An empty board would be:
-
-```ruby
-board = [" "," "," "," "," "," "," "," "," "]
-display_board(board)
-```
-
-Outputting:
-
-```
-   |   |
------------
-   |   |
------------
-   |   |
-```
-
-#### `#input_to_index`
-
-Once the user inputs where they would like to go on the board, we then have to
-convert this to the board index multiple times. Instead of doing that in a lot
-of places, we can remove this repetitive code and put it in this helper method.
-This method takes the user_input (which is a string), converts it to an Integer,
-and subtracts 1. Remember that, from the player's point of view, the board
-contains spaces 1-9. But, an array's indexes start their count at 0.
-
-#### `#move`
-
-Your `#move` method must take in three arguments: **1)** the board array,
-**2)** the index in the board array that the player would like to fill out with
-an "X" or and "O", and **3)** the player's character (either "X" or "O"). We
-previously had you write this method with a default argument of "X" for the
-third argument, but that is no longer needed.
-
-#### `#position_taken?`
-
-The `#position_taken?` method will be responsible for evaluating the position
-selected by the user against the Tic Tac Toe board and checking to see whether
-or not that index on the board array is occupied. If the user would like to fill
-out position 1, our `#position_taken?` method will check to see if that board
-index is vacant or if it contains an "X" or an "O". If the position is free, the
-method should return `false` (i.e. "not taken"), otherwise it will return
-`true`.
-
-#### `#valid_move?`
-
-Build a method `valid_move?` that accepts a board and an index to check and
-returns `true` if the move is valid and `false` or `nil` if not. A valid move
-means that the submitted position is:
-
-1.  Present on the game board.
-2.  Not already filled with a token.
-
-#### `#turn`
-
-Build a method `#turn` to encapsulate the logic of a single complete turn
-composed of the following routine:
-
-1.  Asking the user for their move by position 1-9.
-2.  Receiving the user input.
-3.  Convert user input to an index
-4.  If the move is valid, make the move and display board.
-5.  Otherwise (that is, if the move is invalid) ask for a new position until a
-    valid move is received.
-
-#### `#turn_count`
-
-This method takes in an argument of the board array and returns the number of
-turns that have been played.
-
-#### `#current_player`
-
-The `#current_player` method should take in an argument of the game board and
-use the `#turn_count` method to determine if it is `"X"`'s turn or `"O"`'s.
-
-#### `#won?`
-
-Your `#won?` method should accept a board as an argument and return **false** if
-there is no win combination present in the board and return the winning
-combination indexes as an array if there is a win. Use your `WIN_COMBINATIONS`
-constant in this method.
-
-#### `#full?`
-
-The `#full?` method should accept a board and return true if every element in
-the board contains either an "X" or an "O".
-
-#### `#draw?`
-
-Build a method `#draw?` that accepts a board and returns true if the board has
-not been won and is full and false if the board is not won and the board is not
-full, and false if the board is won.
-
-#### `#over?`
-
-Build a method `#over?` that accepts a board and returns true if the board has
-been won, is a draw, or is full.
-
-#### `#winner`
-
-The `#winner` method should accept a board and return the token, "X" or "O" that
-has won the game given a winning board.
-
-### Putting it all together: the `#play` method
-
-#### `#play`
-
-The play method is the main method of the tic tac toe application and is
-responsible for the game loop. A tic tac toe game must allow players to take
-turns, checking if the game is over after every turn, and at the conclusion of
-the game, whether because it was won or because it was a draw, reporting to the
-user the outcome of the game. 
