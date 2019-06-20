@@ -7,9 +7,9 @@ class GameBoard
   puts "X   WELCOME TO TIC TAC TOE!   X"
   puts "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
-  WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], # row wins
-                    [0,3,6], [1,4,7], [2,5,8], # column wins
-                    [0,4,8], [2,4,6]]          # diagonal wins
+  WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], 
+                    [0,3,6], [1,4,7], [2,5,8], 
+                    [0,4,8], [2,4,6]]         
 
   def initialize
     @pieces = [0, 0, 0,
