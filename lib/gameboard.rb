@@ -1,4 +1,4 @@
-require_relative "./bin/ui.rb"
+require_relative "../bin/ui.rb"
 require_relative "player.rb"
 require_relative "gamepiece.rb"
 
