@@ -15,13 +15,13 @@ to encapsulate the game logic. This game is a result of accomplishing ruby cours
 
 When complete, the game will look something like this when played: https://www.youtube.com/embed/e4TMZ0f6qoI
 
-#### `bin/tictactoe`, `bin/gameboard.rb`
+#### `bin/main.rb`
 
 This is our main executable and will be how we run our game.
 
-#### `lib/player.rb`, `lib/gamepiece.rb` 
+#### `lib/player.rb`, `lib/gamepiece.rb`, `lib/gameboard.rb`, `lib/ui.rb` 
 
-All of our game methods will be coded here.
+All of game methods will be coded here.
 
 ### Tic Tac Toe Game
 
@@ -40,3 +40,4 @@ We will keep track of which player's turn it is and how many turns have been
 played. We will check to see, at every turn, if there is a winner. If there is a
 winner, we'll congratulate them. If there is a tie, we will inform our players.
 
+<a href="https://repl.it/@ojohnnyss/ttttest" rel="nofollow">Try playing here</a>
