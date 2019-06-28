@@ -1,7 +1,7 @@
-require_relative './lib/ui.rb'
-require_relative './lib/player.rb'
-require_relative './lib/gamepiece.rb'
-require_relative './lib/game.rb'
+require_relative '../lib/ui.rb'
+require_relative '../lib/player.rb'
+require_relative '../lib/gamepiece.rb'
+require_relative '../lib/game.rb'
 
 include UI
 
