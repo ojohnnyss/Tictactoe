@@ -10,19 +10,22 @@ WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8],
                     [0,4,8], [2,4,6]]          
 
 
+def iput_player
+  puts "Please, enter first player name"
+    $name1 = gets.chomp
+  puts "Please, enter second player name"
+    $name2 = gets.chomp
+  puts "#{$name1}, which piece do you want? (X/O)" 
 
-  
-
-  def game_loop
-    (1..9).each do |i|
-      puts "Current board:"
-      render_board
-
-      player_move(i.odd? ? 1 : 2)
-      
-      won = game_won?
-      return won unless won == 0
-    end
-    return 0
+  piece_set = false
+  while !piece_set
+    piece = gets.chomp.upcase
+    unless piece == "X" || piece == "O"
+      puts "Please enter X or O!"
+    else
+      piece_set = true
+   end
   end
+end  
+  
 end
