@@ -1,22 +1,20 @@
 require_relative './lib/ui.rb'
 require_relative './lib/player.rb'
 require_relative './lib/gamepiece.rb'
-require_relative './lib/gameboard.rb'
+require_relative './lib/game.rb'
 
 include UI
 
+game = Game.new
 
-
-game_board = GameBoard.new
-
-result = game_board.game_loop
+result = game.game_loop
 if result == 0
   puts "Current board:"
-  game_board.render_board
+  game.render_board
   puts "Cat's game!"
 else
   puts "Current board:"
-  game_board.render_board
+  game.render_board
   if result == 1
   puts "#{$name1} wins!"
   else
