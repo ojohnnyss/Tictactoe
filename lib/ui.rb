@@ -19,8 +19,8 @@ def iput_player
 
   piece_set = false
   while !piece_set
-    piece = gets.chomp.upcase
-    unless piece == "X" || piece == "O"
+    $piece = gets.chomp.upcase
+    unless $piece == "X" || $piece == "O"
       puts "Please enter X or O!"
     else
       piece_set = true
