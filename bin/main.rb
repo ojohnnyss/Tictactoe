@@ -5,22 +5,25 @@ require_relative './lib/game.rb'
 
 include UI
 
-game = Game.new
-
-result = game.game_loop
-if result == 0
-  puts "Current board:"
-  game.render_board
-  puts "Cat's game!"
-else
-  puts "Current board:"
-  game.render_board
-  if result == 1
-  puts "#{$name1} wins!"
+def start
+  game = Game.new
+  result = game.game_loop
+  if result == 0
+    puts "Current board:"
+    game.render_board
+    puts "Cat's game!"
   else
-  puts "#{$name2} wins!"
-  end
-  if result == 1 || result == 2
-     puts "It was exciting! Bye-bye."
+    puts "Current board:"
+    game.render_board
+    if result == 1
+    puts "#{$name1} wins!"
+    else
+    puts "#{$name2} wins!"
+    end
+    if result == 1 || result == 2
+      puts "It was exciting! Bye-bye."
+    end
   end
 end
+
+start
