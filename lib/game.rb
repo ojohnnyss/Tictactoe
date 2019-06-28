@@ -1,15 +1,12 @@
-class GameBoard 
+class Game 
    
   def initialize
     @pieces = [0, 0, 0,
                0, 0, 0,
                0, 0, 0]
     @players = []
-
     (1..2).each { |i| add_player(i) }
-
-    @win = 0
-    
+    @win = 0   
   end
 
   def add_piece(p)
@@ -17,23 +14,8 @@ class GameBoard
   end
 
   def add_player(player)
-  
     if player == 1
-    puts "Please, enter first player name"
-    $name1 = gets.chomp
-    puts "Please, enter second player name"
-    $name2 = gets.chomp
-    puts "#{$name1}, which piece do you want? (X/O)" 
-
-      piece_set = false
-      while !piece_set
-        piece = gets.chomp.upcase
-        unless piece == "X" || piece == "O"
-          puts "Please enter X or O!"
-        else
-          piece_set = true
-        end
-      end
+      iput_player
       @players[1] = Player.new(piece == "X" ? 1 : 2)
     elsif player == 2
       @players[2] = Player.new(@players[1].type == 1 ? 2 : 1)
@@ -118,4 +100,16 @@ class GameBoard
     return @win
   end
   
+   def game_loop
+    (1..9).each do |i|
+      puts "Current board:"
+      render_board
+
+      player_move(i.odd? ? 1 : 2)
+      
+      won = game_won?
+      return won unless won == 0
+    end
+    return 0
+  end
 end
