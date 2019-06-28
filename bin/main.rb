@@ -23,6 +23,6 @@ else
   puts "#{$name2} wins!"
   end
   if result == 1 || result == 2
-     puts "It was excited! Bye-bye."
+     puts "It was exciting! Bye-bye."
   end
 end
