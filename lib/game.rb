@@ -16,7 +16,7 @@ class Game
   def add_player(player)
     if player == 1
       iput_player
-      @players[1] = Player.new(piece == "X" ? 1 : 2)
+      @players[1] = Player.new($piece == "X" ? 1 : 2)
     elsif player == 2
       @players[2] = Player.new(@players[1].type == 1 ? 2 : 1)
     end
