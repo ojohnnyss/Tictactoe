@@ -68,14 +68,7 @@ class Game
       display_board = [*(1..9)]
     end
     
-    puts " #{display_board[0]} | #{display_board[1]} | #{display_board[2]} "
-    puts "___________"
-    puts
-    puts " #{display_board[3]} | #{display_board[4]} | #{display_board[5]} "
-    puts "___________"
-    puts
-    puts " #{display_board[6]} | #{display_board[7]} | #{display_board[8]} "
-    puts
+    print_board(display_board)
 
   end 
 
