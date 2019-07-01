@@ -19,7 +19,7 @@ When complete, the game will look something like this when played: https://www.y
 
 This is our main executable and will be how we run our game.
 
-#### `lib/player.rb`, `lib/gamepiece.rb`, `lib/gameboard.rb`, `lib/ui.rb` 
+#### `lib/player.rb`, `lib/gamepiece.rb`, `lib/game.rb`, `lib/ui.rb` 
 
 All of game methods will be coded here.
 
