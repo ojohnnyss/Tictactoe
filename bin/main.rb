@@ -15,12 +15,8 @@ def start
   else
     puts "Current board:"
     game.render_board
-    if result == 1
-      puts "#{$name1} wins!"
-    else
-      puts "#{$name2} wins!"
-    end
-    if result == 1 || result == 2
+    puts result == 1 ? "#{$name1} wins!" : "#{$name2} wins!"
+    if result == (1 || 2)
       puts "It was exciting! Bye-bye."
     end
   end
