@@ -8,7 +8,7 @@ include UI
 def start
   game = Game.new
   result = game.game_loop
-  if result == 0
+  if result.zero?
     puts "Current board:"
     game.render_board
     puts "Cat's game!"
