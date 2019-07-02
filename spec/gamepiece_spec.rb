@@ -14,8 +14,13 @@ RSpec.describe GamePiece do
       expect(@type1.type).to eql(2)
       expect(@type.pos).to eql(4)
       expect(@type1.pos).to eql(9)
-      expect(@type2.type).not_to be_nil
-      expect(@type2.pos).not_to be_nil
+    end
+  end
+
+  context '# behavior of players' do
+    it 'should play if the game passes type or pos' do
+        expect(@type2.type).not_to be_nil
+        expect(@type2.pos).not_to be_nil
     end
   end
 end
