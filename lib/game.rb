@@ -10,12 +10,13 @@ class Game
   end
 
   def add_piece(p)
-    @pieces[p.pos] = p
+    #@pieces[p.pos] = p
+     return "X"
   end
 
   def add_player(player)
     if player == 1
-      iput_player
+      #iput_player
       @players[1] = Player.new($piece == "X" ? 1 : 2)
     elsif player == 2
       @players[2] = Player.new(@players[1].type == 1 ? 2 : 1)
@@ -32,7 +33,7 @@ class Game
 
     pos_set = false
     while !pos_set
-      pos = gets.chomp.to_i
+      pos = 1 #gets.chomp.to_i
 
       if !(1..9).include?(pos)
         puts "Please enter a number 1 through 9!"
